@@ -3,6 +3,10 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var HeadlineSchema = new Schema({
+  articleId: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true

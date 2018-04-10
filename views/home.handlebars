@@ -1,18 +1,37 @@
 <div class="bg-nav">
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand text-light header" href="#">Mongo Scraper</a>
+    <a class="navbar-brand header" href="#">Mongo Scraper</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-items" aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation"></button>
     <div id="navbar-items" class="navbar-collapse collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link text-light" href="/">Home</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="/saved">Saved Articles</a></li>
       </ul>
-      <button class="btn btn-scrape my-2 my-sm-0 text-light" type="submit">SCRAPE NEW ARTICLES!</button>
+      <a class="nav-link btn btn-scrape" href="/scrape">SCRAPE NEW ARTICLES!</a>
+      <!-- </button> -->
     </div>
   </nav>
 </div>
 <div class="jumbotron text-center">
   <h1>Mongo Scraper</h1>
   <h2>New York Time Edition</h2>
-
 </div>
+
+{{#each articles}}
+<div class="article card m-5" "data-id={{@index}}">
+  <div class="card-header article-title">
+    <h3>
+      <a class="article-link" href="{{link}}" target="_blank">{{title}}</a>
+      <a class="btn btn-scrape text-dark save">Save Article</a>
+    </h3>
+  </div>
+  <div class="card-body">
+    {{summary}}
+  </div>
+  </div>
+{{/each}}
+
+
+<div id="notes"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/scrape.js"></script>
