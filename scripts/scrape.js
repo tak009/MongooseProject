@@ -18,6 +18,7 @@ var Scrape = function(cb) {
         result.summary = $(this).find(".summary").text();
 
         if(result.title !== "" && result.link !== "" && result.summary !== ""){
+          result.summary = result.summary.replace(/^\\s+|\\s+$/, "");  //^\s\s*
           results.push(result);
         }
 

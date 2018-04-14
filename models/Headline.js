@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var HeadlineSchema = new Schema({
   articleId: {
-    type: String,
+    type: Number,
     required: true
   },
   title: {
@@ -19,10 +19,10 @@ var HeadlineSchema = new Schema({
     type: String,
     required: true
   },
-  note: {
+  note: [{
     type: Schema.Types.ObjectId,
     ref: "Note"
-  }
+  }]
 });
 
 var Headline = mongoose.model("Headline", HeadlineSchema);

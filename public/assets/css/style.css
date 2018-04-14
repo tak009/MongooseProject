@@ -44,6 +44,12 @@ body {
   color: #ecc51f;
 }
 
-.article-link, a:hover {
+.article-link {
+  color: #ffffff;
+  display: inline-block;
+  width: 70%;
+}
+
+a:hover {
   color: #ffffff;
 }
