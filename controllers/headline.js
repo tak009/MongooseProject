@@ -12,8 +12,6 @@ var headlineObj = {
     var savedId = db.Headline.find({
       articleId: req.body.articleId
     });
-    console.log("line 13", req.body.articleId);
-    console.log("line 14", savedId);
 
     db.Headline.create(req.body)
       .then(function(dbArticle) {

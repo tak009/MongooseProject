@@ -1,7 +1,6 @@
 $(function() {
-  console.log("SCRAPE");
-  $("#headlines").hide();
   $("#scrape-btn").on("click", function(){
+    window.location.href = "/scrape";
     alert("Added 20 new articles!");
   });
 
@@ -36,8 +35,6 @@ $(function() {
     var delArticle = {
       articleId: article_id
     };
-
-    console.log(delArticle);
 
     $.ajax({
         type: "PUT",
